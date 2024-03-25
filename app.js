@@ -6,13 +6,13 @@ var logger = require('morgan');
 
 var indexRouter = require('./app_server/routes/index');
 var usersRouter = require('./app_server/routes/users');
-var travelRouter = require('./app_server/routes/travel')
-var handleBars = require('hbs')
+var travelRouter = require('./app_server/routes/travel');
+var handleBars = require('hbs');
 
 var app = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'app_server', 'views'));
+app.set('views', path.join(__dirname, 'app_server', 'views')); // E:/Projects/JavaScript/travlr/app_server/views
 
 // register handlebars partials
 handleBars.registerPartials(__dirname + '/app_server/views/partials');
