@@ -5,12 +5,14 @@ const router = express.Router(); // Router logic
 const tripsController = require('../controllers/trips');
 
 // Define routes for the endpoints
-router // Route to collect all trips within the db
+router // Route for tripsList
     .route('/trips')
-    .get(tripsController.tripsList); 
+    .get(tripsController.tripsList) // GET Method to retrieve the tripsList
+    .post(tripsController.tripsAddTrip); // POST Method adds a new Trip to tripsList
 
-router // Route to collect a single trip from the db
+router // Route for specific Trips via a tripCode
     .route('/trips/:tripCode')
-    .get(tripsController.tripsFindByCode);
+    .get(tripsController.tripsFindByCode) // GET Method to retrieve an existing Trip
+    .put(tripsController.tripsUpdateTrip); // PUT Method for updating an existing Trip
 
 module.exports = router;
